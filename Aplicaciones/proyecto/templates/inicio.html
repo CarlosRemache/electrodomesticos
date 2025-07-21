@@ -1,0 +1,1122 @@
+{%  extends "./plantilla.html" %}
+{% load static %}
+{%  block contenido %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Cental -Electrodomesticos</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="{% static 'plantilla/lib/animate/animate.min.css'   %}" rel="stylesheet">
+        <link href="{% static 'plantilla/lib/owlcarousel/assets/owl.carousel.min.css'   %}" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="{% static 'plantilla/css/bootstrap.min.css'   %}" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="{% static 'plantilla/css/style.css'   %}" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Cargando...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
+        <div class="container-fluid topbar bg-secondary d-none d-xl-block w-100">
+            <div class="container">
+                <div class="row gx-0 align-items-center" style="height: 45px;">
+                    <div class="col-lg-6 text-center text-lg-start mb-lg-0">
+                        <div class="d-flex flex-wrap">
+                            <a href="#" class="text-muted me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Electrodomestiscos</a>
+                            <a href="tel:+01234567890" class="text-muted me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+0978678678</a>
+                            <a href="mailto:example@gmail.com" class="text-muted me-0"><i class="fas fa-envelope text-primary me-2"></i>electrodometicos@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn btn-light btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a href="" class="navbar-brand p-0">
+                        <h1 class="display-6 text-primary"><i class="fas fa-car-alt me-3"></i></i>Cental</h1>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav mx-auto py-0">
+                            <a href="/inicio/" class="nav-item nav-link active">Inicio</a>
+
+                            
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Paginas</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="/nuevologin/" class="dropdown-item">Nuevo Login</a>
+                                    <a href="/listadologin/" class="dropdown-item">listado Login</a>
+                                    <a href="/nuevocliente/" class="dropdown-item">Nuevo Cliente</a>
+                                    <a href="/listadocliente/" class="dropdown-item">listado Cliente</a>
+                                    <a href="/nuevotecnico/" class="dropdown-item">Nuevo Tecnico</a>
+                                    <a href="/listadotecnico/" class="dropdown-item">Listado Tecnico</a>                                    
+                                    <a href="/nuevoelectrodomestico/" class="dropdown-item">Nuevo Electrodomestico</a>
+                                    <a href="/listadoelectrodomestico/" class="dropdown-item">Listado Electrodomestico</a>
+                                    <a href="/nuevoservicio/" class="dropdown-item"> Nuevo Servicio</a>
+                                    <a href="/listadoservicio/" class="dropdown-item">Listado Servicio</a>
+                                    <a href="/nuevafactura/" class="dropdown-item">Nueva Factura</a>
+                                    <a href="/listadofactura/" class="dropdown-item">Listado Factura</a>
+                                </div>
+                            </div>
+                            <a href="/contacto/" class="nav-item nav-link">Contact</a>
+                        </div>
+                        <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Get Started</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+<style>
+  .grafico-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .grafico-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+  }
+
+  /* Ancho para 3 gráficos por fila */
+  .fila-3 .grafico-card {
+    flex: 1 1 30%;
+    max-width: 30%;
+  }
+
+  /* Ancho para 1 gráfico en fila (centrado) */
+  .fila-1 .grafico-card {
+    flex: 1 1 40%;
+    max-width: 40%;
+  }
+
+  .grafico-card h4 {
+    color: #333;
+    margin-bottom: 18px;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .grafico-card canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+</style>
+
+<section id="listagra" class="about section">
+  <div class="container section-title" data-aos="fade-up">
+
+    <!-- Fila 1: 3 gráficos -->
+    <div class="grafico-row fila-3">
+      <div class="grafico-card">
+        <h4>Gráfico 1: Servicios con mayor costo estimado</h4>
+        <canvas id="grafico1"></canvas>
+      </div>
+      <div class="grafico-card">
+        <h4>Gráfico 2: Cantidad de técnicos por especialidad</h4>
+        <canvas id="grafico2"></canvas>
+      </div>
+      <div class="grafico-card">
+        <h4>Gráfico 3: Conteo de servicios por tipo de electrodoméstico</h4>
+        <canvas id="grafico3"></canvas>
+      </div>
+    </div>
+
+    <!-- Fila 2: 3 gráficos -->
+    <div class="grafico-row fila-3" style="margin-top: 40px;">
+      <div class="grafico-card">
+        <h4>Gráfico 4: Número de servicios por estado</h4>
+        <canvas id="grafico4"></canvas>
+      </div>
+      <div class="grafico-card">
+        <h4>Gráfico 5: Número de electrodomésticos por marca</h4>
+        <canvas id="grafico5"></canvas>
+      </div>
+      <div class="grafico-card">
+        <h4>Gráfico 6: Conteo de servicios por mes últimos 12 meses</h4>
+        <canvas id="grafico6"></canvas>
+      </div>
+    </div>
+
+    <!-- Fila 3: 3 gráficos -->
+    <div class="grafico-row fila-3" style="margin-top: 40px;">
+      <div class="grafico-card">
+        <h4>Gráfico 7: Top 10 fallas de electrodomésticos</h4>
+        <canvas id="grafico7"></canvas>
+      </div>
+      <div class="grafico-card">
+        <h4>Gráfico 8: Total de facturas por su estado</h4>
+        <canvas id="grafico8"></canvas>
+      </div>
+      <div class="grafico-card">
+        <h4>Gráfico 9: Total de facturas pagadas vs no pagadas</h4>
+        <canvas id="grafico9"></canvas>
+      </div>
+    </div>
+
+    <!-- Fila 4: 1 gráfico centrado -->
+    <div class="grafico-row fila-1" style="margin-top: 40px;">
+      <div class="grafico-card">
+        <h4>Gráfico 10: Top 5 clientes por total facturado</h4>
+        <canvas id="grafico10"></canvas>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const pastelColors1 = ['#AEC6CF', '#FFB347', '#77DD77', '#FFD1DC', '#CBAACB'];
+  const pastelColors2 = ['#FF6961', '#FDFD96', '#84B6F4', '#FFB347', '#77DD77', '#CBAACB'];
+  const pastelColors3 = ['#B39EB5', '#FF6961', '#FFB347', '#77DD77', '#AEC6CF', '#FFD1DC'];
+  const pastelColors4 = ['#D5C6E0', '#84B6F4', '#FF6961', '#FFB347', '#77DD77', '#CBAACB'];
+
+  // Gráfico 1: Pie con colores pastel
+  new Chart(document.getElementById('grafico1'), {
+    type: 'line',
+    data: {
+      labels: {{ grafico1_labels|safe }},
+      datasets: [{
+        label: 'Costo estimado',
+        data: {{ grafico1_data|safe }},
+        backgroundColor: pastelColors1,
+        borderWidth: 1,
+        borderColor: '#fff'
+      }]
+    },
+    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+  });
+
+  // Gráfico 2: Doughnut
+  new Chart(document.getElementById('grafico2'), {
+    type: 'polarArea',
+    data: {
+      labels: {{ grafico2_labels|safe }},
+      datasets: [{
+        label: 'Técnicos por especialidad',
+        data: {{ grafico2_data|safe }},
+        backgroundColor: pastelColors2,
+        borderWidth: 1,
+        borderColor: '#fff'
+      }]
+    },
+    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+  });
+
+  // Gráfico 3: Bar con bordes redondeados
+  new Chart(document.getElementById('grafico3'), {
+    type: 'bar',
+    data: {
+      labels: {{ grafico3_labels|safe }},
+      datasets: [{
+        label: 'Servicios por tipo',
+        data: {{ grafico3_data|safe }},
+        backgroundColor: pastelColors3,
+        borderWidth: 0,
+        borderRadius: 6,
+        maxBarThickness: 40
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+
+  // Gráfico 4: Doughnut
+  new Chart(document.getElementById('grafico4'), {
+    type: 'doughnut',
+    data: {
+      labels: {{ grafico4_labels|safe }},
+      datasets: [{
+        label: 'Servicios por estado',
+        data: {{ grafico4_data|safe }},
+        backgroundColor: pastelColors4,
+        borderWidth: 1,
+        borderColor: '#fff'
+      }]
+    },
+    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+  });
+
+  // Gráfico 5: Horizontal Bar
+  new Chart(document.getElementById('grafico5'), {
+    type: 'bar',
+    data: {
+      labels: {{ grafico5_labels|safe }},
+      datasets: [{
+        label: 'Electrodomésticos por marca',
+        data: {{ grafico5_data|safe }},
+        backgroundColor: pastelColors2,
+        borderRadius: 6,
+        maxBarThickness: 40
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      scales: {
+        x: { beginAtZero: true }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+
+  // Gráfico 6: Linea suave
+  new Chart(document.getElementById('grafico6'), {
+    type: 'line',
+    data: {
+      labels: {{ grafico6_labels|safe }},
+      datasets: [{
+        label: 'Servicios últimos 12 meses',
+        data: {{ grafico6_data|safe }},
+        fill: true,
+        backgroundColor: 'rgba(135,206,250, 0.3)',
+        borderColor: '#87CEFA',
+        tension: 0.4,
+        pointRadius: 4,
+        pointBackgroundColor: '#4682B4',
+        borderWidth: 3
+      }]
+    },
+    options: { responsive: true, plugins: { legend: { position: 'top' } } }
+  });
+
+  // Gráfico 7: Bar
+  new Chart(document.getElementById('grafico7'), {
+    type: 'doughnut',
+    data: {
+      labels: {{ grafico7_labels|safe }},
+      datasets: [{
+        label: 'Top fallas',
+        data: {{ grafico7_data|safe }},
+        backgroundColor: pastelColors3,
+        borderRadius: 6,
+        maxBarThickness: 40
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: { y: { beginAtZero: true } },
+      plugins: { legend: { display: false } }
+    }
+  });
+
+  // Gráfico 8: Pie
+  new Chart(document.getElementById('grafico8'), {
+    type: 'bar',
+    data: {
+      labels: {{ grafico8_labels|safe }},
+      datasets: [{
+        label: 'Estado facturas',
+        data: {{ grafico8_data|safe }},
+        backgroundColor: pastelColors1,
+        borderWidth: 1,
+        borderColor: '#fff'
+      }]
+    },
+    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+  });
+
+  // Gráfico 9: Bar
+  new Chart(document.getElementById('grafico9'), {
+    type: 'pie',
+    data: {
+      labels: {{ grafico9_labels|safe }},
+      datasets: [{
+        label: 'Facturas pagadas vs no pagadas',
+        data: {{ grafico9_data|safe }},
+        backgroundColor: pastelColors4,
+        borderRadius: 6,
+        maxBarThickness: 40
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: { y: { beginAtZero: true } },
+      plugins: { legend: { display: false } }
+    }
+  });
+
+  // Gráfico 10: Doughnut
+  new Chart(document.getElementById('grafico10'), {
+    type: 'radar',
+    data: {
+      labels: {{ grafico10_labels|safe }},
+      datasets: [{
+        label: 'Top clientes',
+        data: {{ grafico10_data|safe }},
+        backgroundColor: pastelColors2,
+        borderWidth: 1,
+        borderColor: '#fff'
+      }]
+    },
+    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+  });
+
+</script>
+
+
+        
+
+            
+
+
+
+
+
+
+
+<!-- Carousel Start -->
+<div class="header-carousel">
+    <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img src="{% static 'plantilla/img/carousel-2.jpg' %}" class="img-fluid w-100" alt="Servicio Técnico Electrodomésticos"/>
+                <div class="carousel-caption">
+                    <div class="container py-4">
+                        <div class="row g-5">
+                            <div class="col-lg-6 fadeInLeft animated" data-animation="fadeInLeft" data-delay="1s" style="animation-delay: 1s;">
+                                <div class="bg-secondary rounded p-5">
+                                    <h4 class="text-white mb-4">Reserva tu Servicio de Reparación</h4>
+                                    <form>
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <select class="form-select" aria-label="Selecciona tipo de electrodoméstico">
+                                                    <option selected>Selecciona tipo de electrodoméstico</option>
+                                                    <option value="1">Lavadora</option>
+                                                    <option value="2">Refrigerador</option>
+                                                    <option value="3">Microondas</option>
+                                                    <option value="4">Aire acondicionado</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <input class="form-control" type="text" placeholder="Dirección o Ciudad para el servicio" aria-label="Dirección o Ciudad">
+                                            </div>
+                                            <div class="col-12">
+                                                <input class="form-control" type="date" aria-label="Fecha de servicio">
+                                            </div>
+                                            <div class="col-12">
+                                                <select class="form-select" aria-label="Hora de servicio">
+                                                    <option selected>Selecciona hora</option>
+                                                    <option value="1">08:00 AM</option>
+                                                    <option value="2">09:00 AM</option>
+                                                    <option value="3">10:00 AM</option>
+                                                    <option value="4">11:00 AM</option>
+                                                    <option value="5">12:00 PM</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <button class="btn btn-light w-100 py-2">Solicitar Servicio</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-none d-lg-flex fadeInRight animated" data-animation="fadeInRight" data-delay="1s" style="animation-delay: 1s;">
+                                <div class="text-start">
+                                    <h1 class="display-5 text-white">15% de descuento en tu primera reparación</h1>
+                                    <p>Confía en nuestros técnicos certificados para cuidar tus electrodomésticos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'plantilla/img/carousel-1.jpg' %}" class="img-fluid w-100" alt="Servicio Técnico Electrodomésticos"/>
+                <div class="carousel-caption">
+                    <div class="container py-4">
+                        <div class="row g-5">
+                            <div class="col-lg-6 fadeInLeft animated" data-animation="fadeInLeft" data-delay="1s" style="animation-delay: 1s;">
+                                <div class="bg-secondary rounded p-5">
+                                    <h4 class="text-white mb-4">Agenda tu Diagnóstico Técnico</h4>
+                                    <form>
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <select class="form-select" aria-label="Selecciona tipo de electrodoméstico">
+                                                    <option selected>Selecciona tipo de electrodoméstico</option>
+                                                    <option value="1">Lavadora</option>
+                                                    <option value="2">Refrigerador</option>
+                                                    <option value="3">Microondas</option>
+                                                    <option value="4">Aire acondicionado</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <input class="form-control" type="text" placeholder="Dirección o Ciudad para el diagnóstico" aria-label="Dirección o Ciudad">
+                                            </div>
+                                            <div class="col-12">
+                                                <input class="form-control" type="date" aria-label="Fecha de diagnóstico">
+                                            </div>
+                                            <div class="col-12">
+                                                <select class="form-select" aria-label="Hora de diagnóstico">
+                                                    <option selected>Selecciona hora</option>
+                                                    <option value="1">08:00 AM</option>
+                                                    <option value="2">09:00 AM</option>
+                                                    <option value="3">10:00 AM</option>
+                                                    <option value="4">11:00 AM</option>
+                                                    <option value="5">12:00 PM</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <button class="btn btn-light w-100 py-2">Solicitar Diagnóstico</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-none d-lg-flex fadeInRight animated" data-animation="fadeInRight" data-delay="1s" style="animation-delay: 1s;">
+                                <div class="text-start">
+                                    <h1 class="display-5 text-white">Expertos en reparación de electrodomésticos</h1>
+                                    <p>Diagnóstico rápido y presupuesto transparente.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+<!-- Carousel End -->
+
+<!-- About Start -->
+<div class="container-fluid overflow-hidden about py-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="about-item">
+                    <div class="pb-5">
+                        <h1 class="display-5 text-capitalize">Cental <span class="text-primary">Sobre Nosotros</span></h1>
+                        <p class="mb-0">
+                            Somos especialistas en mantenimiento y reparación de electrodomésticos con años de experiencia brindando servicios confiables y eficientes.
+                        </p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="about-item-inner border p-4">
+                                <div class="about-icon mb-4">
+                                    <img src="img/about-icon-1.png" class="img-fluid w-50 h-50" alt="Icono Visión">
+                                </div>
+                                <h5 class="mb-3">Nuestra Visión</h5>
+                                <p class="mb-0">Ser la empresa líder en servicios técnicos de electrodomésticos, reconocida por su calidad y confianza.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about-item-inner border p-4">
+                                <div class="about-icon mb-4">
+                                    <img src="img/about-icon-2.png" class="img-fluid h-50 w-50" alt="Icono Misión">
+                                </div>
+                                <h5 class="mb-3">Nuestra Misión</h5>
+                                <p class="mb-0">Ofrecer soluciones técnicas rápidas, profesionales y accesibles para mantener tus electrodomésticos funcionando como nuevos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-item my-4">
+                        Contamos con técnicos certificados y el equipamiento necesario para diagnosticar y reparar desde lavadoras hasta microondas, asegurando la satisfacción total de nuestros clientes.
+                    </p>
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="text-center rounded bg-secondary p-4">
+                                <h1 class="display-6 text-white">17</h1>
+                                <h5 class="text-light mb-0">Años de Experiencia</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="rounded">
+                                <p class="mb-2"><i class="fa fa-check-circle text-primary me-1"></i> Técnicos certificados</p>
+                                <p class="mb-2"><i class="fa fa-check-circle text-primary me-1"></i> Garantía en reparaciones</p>
+                                <p class="mb-2"><i class="fa fa-check-circle text-primary me-1"></i> Atención personalizada</p>
+                                <p class="mb-0"><i class="fa fa-check-circle text-primary me-1"></i> Respuesta rápida</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 d-flex align-items-center">
+                            <a href="#" class="btn btn-primary rounded py-3 px-5">Más Sobre Nosotros</a>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="d-flex align-items-center">
+                                <img src="img/technician.jpg" class="img-fluid rounded-circle border border-4 border-secondary" style="width: 100px; height: 100px;" alt="Técnico">
+                                <div class="ms-4">
+                                    <h4>Juan Pérez</h4>
+                                    <p class="mb-0">Fundador y Técnico Principal</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
+                <div class="about-img">
+                    <div class="img-1">
+                        <img src="img/about-img.jpg" class="img-fluid rounded h-100 w-100" alt="Servicio Técnico">
+                    </div>
+                    <div class="img-2">
+                        <img src="img/about-img-1.jpg" class="img-fluid rounded w-100" alt="Técnico trabajando">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+<!-- Electrodomésticos Categorías Start -->
+<div class="container-fluid categories pb-5">
+    <div class="container pb-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <h1 class="display-5 text-capitalize mb-3">Categorías de <span class="text-primary">Electrodomésticos</span></h1>
+            <p class="mb-0">Descubre las diferentes categorías de electrodomésticos para los que ofrecemos servicios de mantenimiento y reparación especializados.</p>
+        </div>
+        <div class="categories-carousel owl-carousel wow fadeInUp" data-wow-delay="0.1s">
+            <div class="categories-item p-4">
+                <div class="categories-item-inner">
+                    <div class="categories-img rounded-top">
+                        <img src="img/lavadora.png" class="img-fluid w-100 rounded-top" alt="Lavadoras">
+                    </div>
+                    <div class="categories-content rounded-bottom p-4">
+                        <h4>Lavadoras</h4>
+                        <div class="categories-review mb-4">
+                            <div class="me-3">4.7 Valoración</div>
+                            <div class="d-flex justify-content-center text-secondary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="bg-white text-primary rounded-pill py-2 px-4 mb-0">Servicio desde $25</h4>
+                        </div>
+                        <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Solicitar Servicio</a>
+                    </div>
+                </div>
+            </div>
+            <div class="categories-item p-4">
+                <div class="categories-item-inner">
+                    <div class="categories-img rounded-top">
+                        <img src="img/refrigerador.png" class="img-fluid w-100 rounded-top" alt="Refrigeradores">
+                    </div>
+                    <div class="categories-content rounded-bottom p-4">
+                        <h4>Refrigeradores</h4>
+                        <div class="categories-review mb-4">
+                            <div class="me-3">4.5 Valoración</div>
+                            <div class="d-flex justify-content-center text-secondary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="fas fa-star text-body"></i>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="bg-white text-primary rounded-pill py-2 px-4 mb-0">Servicio desde $30</h4>
+                        </div>
+                        <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Solicitar Servicio</a>
+                    </div>
+                </div>
+            </div>
+            <div class="categories-item p-4">
+                <div class="categories-item-inner">
+                    <div class="categories-img rounded-top">
+                        <img src="img/cocina.png" class="img-fluid w-100 rounded-top" alt="Cocinas eléctricas">
+                    </div>
+                    <div class="categories-content rounded-bottom p-4">
+                        <h4>Cocinas eléctricas</h4>
+                        <div class="categories-review mb-4">
+                            <div class="me-3">4.8 Valoración</div>
+                            <div class="d-flex justify-content-center text-secondary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="bg-white text-primary rounded-pill py-2 px-4 mb-0">Servicio desde $20</h4>
+                        </div>
+                        <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Solicitar Servicio</a>
+                    </div>
+                </div>
+            </div>
+            <div class="categories-item p-4">
+                <div class="categories-item-inner">
+                    <div class="categories-img rounded-top">
+                        <img src="img/microondas.png" class="img-fluid w-100 rounded-top" alt="Microondas">
+                    </div>
+                    <div class="categories-content rounded-bottom p-4">
+                        <h4>Microondas</h4>
+                        <div class="categories-review mb-4">
+                            <div class="me-3">4.6 Valoración</div>
+                            <div class="d-flex justify-content-center text-secondary">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="fas fa-star text-body"></i>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="bg-white text-primary rounded-pill py-2 px-4 mb-0">Servicio desde $18</h4>
+                        </div>
+                        <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center py-3">Solicitar Servicio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Electrodomésticos Categorías End -->
+
+<!-- Proceso de Servicio Start -->
+<div class="container-fluid steps py-5" style="background-color:#343a40;">
+    <div class="container py-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <h1 class="display-5 text-capitalize text-white mb-3">Nuestro <span class="text-primary">Proceso</span></h1>
+            <p class="mb-0 text-white">Así es como trabajamos para brindarte el mejor servicio técnico, rápido y confiable.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="steps-item p-4 mb-4 bg-light rounded">
+                    <h4>1. Contáctanos</h4>
+                    <p class="mb-0">Envía tu solicitud por WhatsApp, llamada o nuestro formulario en línea.</p>
+                    <div class="setps-number">01.</div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="steps-item p-4 mb-4 bg-light rounded">
+                    <h4>2. Diagnóstico</h4>
+                    <p class="mb-0">Un técnico especializado evaluará el problema de tu electrodoméstico.</p>
+                    <div class="setps-number">02.</div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="steps-item p-4 mb-4 bg-light rounded">
+                    <h4>3. Reparación y entrega</h4>
+                    <p class="mb-0">Reparamos tu equipo con garantía y te lo entregamos en el menor tiempo posible.</p>
+                    <div class="setps-number">03.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Proceso de Servicio End -->
+
+<!-- Blog Start -->
+<div class="container-fluid blog py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <h1 class="display-5 text-capitalize mb-3">Centro de <span class="text-primary">Noticias & Consejos</span></h1>
+            <p class="mb-0">Mantente informado con los últimos consejos, novedades y recomendaciones para el cuidado y mantenimiento de tus electrodomésticos.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="img/blog-1.jpg" class="img-fluid rounded-top w-100" alt="Consejos para lavadoras">
+                    </div>
+                    <div class="blog-content rounded-bottom p-4">
+                        <div class="blog-date">10 Jul 2025</div>
+                        <div class="blog-comment my-3">
+                            <div class="small"><span class="fa fa-user text-primary"></span><span class="ms-2">Ana R.</span></div>
+                            <div class="small"><span class="fa fa-comment-alt text-primary"></span><span class="ms-2">4 Comentarios</span></div>
+                        </div>
+                        <a href="#" class="h4 d-block mb-3">5 Consejos para prolongar la vida útil de tu lavadora</a>
+                        <p class="mb-3">Conoce las mejores prácticas para mantener tu lavadora en óptimas condiciones y evitar reparaciones costosas.</p>
+                        <a href="#" class="">Leer Más  <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="img/blog-2.jpg" class="img-fluid rounded-top w-100" alt="Mantenimiento de refrigeradores">
+                    </div>
+                    <div class="blog-content rounded-bottom p-4">
+                        <div class="blog-date">5 Jul 2025</div>
+                        <div class="blog-comment my-3">
+                            <div class="small"><span class="fa fa-user text-primary"></span><span class="ms-2">Luis M.</span></div>
+                            <div class="small"><span class="fa fa-comment-alt text-primary"></span><span class="ms-2">3 Comentarios</span></div>
+                        </div>
+                        <a href="#" class="h4 d-block mb-3">Cómo mantener tu refrigerador eficiente y ahorrar energía</a>
+                        <p class="mb-3">Tips prácticos para el mantenimiento preventivo de refrigeradores que ayudan a reducir el consumo eléctrico.</p>
+                        <a href="#" class="">Leer Más  <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="img/blog-3.jpg" class="img-fluid rounded-top w-100" alt="Reparación de cocinas">
+                    </div>
+                    <div class="blog-content rounded-bottom p-4">
+                        <div class="blog-date">1 Jul 2025</div>
+                        <div class="blog-comment my-3">
+                            <div class="small"><span class="fa fa-user text-primary"></span><span class="ms-2">Carolina S.</span></div>
+                            <div class="small"><span class="fa fa-comment-alt text-primary"></span><span class="ms-2">5 Comentarios</span></div>
+                        </div>
+                        <a href="#" class="h4 d-block mb-3">Cuándo es necesario llamar al técnico para tu cocina eléctrica</a>
+                        <p class="mb-3">Señales claras que indican que tu cocina necesita mantenimiento profesional para evitar fallas mayores.</p>
+                        <a href="#" class="">Leer Más  <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Blog End -->
+
+<!-- Banner Start -->
+<div class="container-fluid banner pb-5 wow zoomInDown" data-wow-delay="0.1s">
+    <div class="container pb-5">
+        <div class="banner-item rounded">
+            <img src="img/banner-1.jpg" class="img-fluid rounded w-100" alt="Mantenimiento de Electrodomésticos">
+            <div class="banner-content">
+                <h2 class="text-primary">¿Problemas con tus electrodomésticos?</h2>
+                <h1 class="text-white">¡Solicita tu servicio ahora!</h1>
+                <p class="text-white">No pierdas más tiempo, agenda tu mantenimiento o reparación con técnicos calificados.</p>
+                <div class="banner-btn">
+                    <a href="#" class="btn btn-secondary rounded-pill py-3 px-4 px-md-5 me-2">WhatsApp</a>
+                    <a href="#" class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2">Contáctanos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner End -->
+
+<!-- Equipo Técnico Start -->
+<div class="container-fluid team pb-5">
+    <div class="container pb-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <h1 class="display-5 text-capitalize mb-3">Nuestro <span class="text-primary">Equipo Técnico</span></h1>
+            <p class="mb-0">Contamos con un equipo de profesionales altamente capacitados, especializados en mantenimiento y reparación de todo tipo de electrodomésticos, brindando atención rápida y soluciones eficientes.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item p-4 pt-0">
+                    <div class="team-img">
+                        <img src="img/team-1.jpg" class="img-fluid rounded w-100" alt="Técnico">
+                    </div>
+                    <div class="team-content pt-4">
+                        <h4>Andrés Pérez</h4>
+                        <p>Técnico Especialista en Refrigeración</p>
+                        <div class="team-icon d-flex justify-content-center">
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="team-item p-4 pt-0">
+                    <div class="team-img">
+                        <img src="img/team-2.jpg" class="img-fluid rounded w-100" alt="Técnico">
+                    </div>
+                    <div class="team-content pt-4">
+                        <h4>Sofía Castillo</h4>
+                        <p>Especialista en Electrodomésticos de Cocina</p>
+                        <div class="team-icon d-flex justify-content-center">
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item p-4 pt-0">
+                    <div class="team-img">
+                        <img src="img/team-3.jpg" class="img-fluid rounded w-100" alt="Técnico">
+                    </div>
+                    <div class="team-content pt-4">
+                        <h4>Carlos Méndez</h4>
+                        <p>Servicio Técnico de Lavadoras</p>
+                        <div class="team-icon d-flex justify-content-center">
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="team-item p-4 pt-0">
+                    <div class="team-img">
+                        <img src="img/team-4.jpg" class="img-fluid rounded w-100" alt="Técnico">
+                    </div>
+                    <div class="team-content pt-4">
+                        <h4>Lucía Ramírez</h4>
+                        <p>Soporte Técnico y Atención al Cliente</p>
+                        <div class="team-icon d-flex justify-content-center">
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Equipo Técnico End -->
+
+<!-- Testimonios Start -->
+<div class="container-fluid testimonial pb-5">
+    <div class="container pb-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <h1 class="display-5 text-capitalize mb-3">Opiniones de <span class="text-primary">Nuestros Clientes</span></h1>
+            <p class="mb-0">Conoce la experiencia de quienes confiaron en nuestro portal de mantenimiento de electrodomésticos. ¡Compromiso, calidad y atención personalizada son nuestra prioridad!</p>
+        </div>
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            <div class="testimonial-item">
+                <div class="testimonial-quote"><i class="fa fa-quote-right fa-2x"></i></div>
+                <div class="testimonial-inner p-4">
+                    <img src="img/testimonial-1.jpg" class="img-fluid" alt="cliente satisfecho">
+                    <div class="ms-4">
+                        <h4>María Gómez</h4>
+                        <p>Emprendedora</p>
+                        <div class="d-flex text-primary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star text-body"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top rounded-bottom p-4">
+                    <p class="mb-0">“Excelente servicio técnico. Repararon mi lavadora en el mismo día. Muy profesionales y amables. ¡Recomendados totalmente!”</p>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-quote"><i class="fa fa-quote-right fa-2x"></i></div>
+                <div class="testimonial-inner p-4">
+                    <img src="img/testimonial-2.jpg" class="img-fluid" alt="cliente satisfecho">
+                    <div class="ms-4">
+                        <h4>Carlos Rivera</h4>
+                        <p>Dueño de Restaurante</p>
+                        <div class="d-flex text-primary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star text-body"></i>
+                            <i class="fas fa-star text-body"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top rounded-bottom p-4">
+                    <p class="mb-0">“Me ayudaron con la reparación urgente de mi cocina industrial. Buen tiempo de respuesta y atención excelente.”</p>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-quote"><i class="fa fa-quote-right fa-2x"></i></div>
+                <div class="testimonial-inner p-4">
+                    <img src="img/testimonial-3.jpg" class="img-fluid" alt="cliente satisfecho">
+                    <div class="ms-4">
+                        <h4>Lucía Herrera</h4>
+                        <p>Ama de casa</p>
+                        <div class="d-flex text-primary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star text-body"></i>
+                            <i class="fas fa-star text-body"></i>
+                            <i class="fas fa-star text-body"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top rounded-bottom p-4">
+                    <p class="mb-0">“Fácil de agendar la cita. Repararon mi refrigeradora en menos de 48 horas. Muy satisfecha con el servicio ofrecido.”</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonios End -->
+
+<!-- Footer Start -->
+<div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <!-- Sección Sobre Nosotros -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <div class="footer-item">
+                        <h4 class="text-white mb-4">Sobre Nosotros</h4>
+                        <p class="mb-3">Somos un portal dedicado a ofrecer soluciones confiables para el mantenimiento y reparación de electrodomésticos. Contamos con técnicos especializados y un servicio rápido y seguro.</p>
+                    </div>
+                    <div class="position-relative">
+                        <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Ingresa tu correo">
+                        <button type="button" class="btn btn-secondary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">Suscribirse</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Sección Enlaces Rápidos -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">Enlaces Rápidos</h4>
+                    <a href="#"><i class="fas fa-angle-right me-2"></i> Inicio</a>
+                    <a href="#"><i class="fas fa-angle-right me-2"></i> Servicios</a>
+                    <a href="#"><i class="fas fa-angle-right me-2"></i> Electrodomésticos</a>
+                    <a href="#"><i class="fas fa-angle-right me-2"></i> Técnicos</a>
+                    <a href="#"><i class="fas fa-angle-right me-2"></i> Contáctanos</a>
+                    <a href="#"><i class="fas fa-angle-right me-2"></i> Términos y Condiciones</a>
+                </div>
+            </div>
+            <!-- Sección Horario de Atención -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">Horario de Atención</h4>
+                    <div class="mb-3">
+                        <h6 class="text-muted mb-0">Lunes a Viernes:</h6>
+                        <p class="text-white mb-0">08:00 am - 06:00 pm</p>
+                    </div>
+                    <div class="mb-3">
+                        <h6 class="text-muted mb-0">Sábados:</h6>
+                        <p class="text-white mb-0">09:00 am - 03:00 pm</p>
+                    </div>
+                    <div class="mb-3">
+                        <h6 class="text-muted mb-0">Domingos:</h6>
+                        <p class="text-white mb-0">Cerrado</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Sección Contacto -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-white mb-4">Información de Contacto</h4>
+                    <a href="#"><i class="fa fa-map-marker-alt me-2"></i> Calle Principal, Ciudad, País</a>
+                    <a href="mailto:soporte@portalservicios.com"><i class="fas fa-envelope me-2"></i> soporte@portalservicios.com</a>
+                    <a href="tel:+593 987 654 321"><i class="fas fa-phone me-2"></i> +593 987 654 321</a>
+                    <a href="#" class="mb-3"><i class="fas fa-print me-2"></i> +593 987 654 321</a>
+                    <div class="d-flex">
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i class="fab fa-facebook-f text-white"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i class="fab fa-twitter text-white"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i class="fab fa-instagram text-white"></i></a>
+                        <a class="btn btn-secondary btn-md-square rounded-circle me-0" href=""><i class="fab fa-linkedin-in text-white"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-body">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom text-white" href="https://themewagon.com">ThemeWagon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'plantilla/lib/wow/wow.min.js'   %}"></script>
+    <script src="{% static 'plantilla/lib/easing/easing.min.js'   %}"></script>
+    <script src="{% static 'plantilla/lib/waypoints/waypoints.min.js'   %}"></script>
+    <script src="{% static 'plantilla/lib/counterup/counterup.min.js'   %}"></script>
+    <script src="{% static 'plantilla/lib/owlcarousel/owl.carousel.min.js'   %}"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="{% static 'plantilla/js/main.js'   %}"></script>
+
+
+
+
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
