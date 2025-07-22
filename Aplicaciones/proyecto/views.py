@@ -47,7 +47,7 @@ def cerrar_sesion(request):
 
 
 
-
+# ------------------------------------------------------------- Inicio de la aplicacion para mostrar graficos y datos
 
 def inicio(request):
     # Gráfico1
