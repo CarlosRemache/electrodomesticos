@@ -199,7 +199,8 @@ def inicio(request):
 def contacto(request):
     return render(request,'contacto.html')
 
-
+def servicio(request):
+    return render(request,'servicio.html')
 
 
 def nuevologin(request):
