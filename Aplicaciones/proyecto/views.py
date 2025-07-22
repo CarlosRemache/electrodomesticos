@@ -8,11 +8,11 @@ from django.db.models.functions import TruncMonth
 from django.utils.timezone import now
 from datetime import timedelta
 
-from django.contrib import messages
+from django.contrib import messages # para mostrar mensajes de éxito o error
 from django.db.models.functions import ExtractYear
 
 
-import json
+import json # para convertir listas a JSON
 
 
 def login_view(request):
