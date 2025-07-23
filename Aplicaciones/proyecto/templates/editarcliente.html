@@ -85,25 +85,61 @@
                             <a href="/servicio/" class="nav-item nav-link">Servicio</a>
                             
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Paginas</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login</a>
                                 <div class="dropdown-menu m-0">
                                     <a href="/nuevologin/" class="dropdown-item">Nuevo Login</a>
                                     <a href="/listadologin/" class="dropdown-item">listado Login</a>
+                                </div>
+                            </div>
+                            
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Cliente</a>
+                                <div class="dropdown-menu m-0">
                                     <a href="/nuevocliente/" class="dropdown-item">Nuevo Cliente</a>
                                     <a href="/listadocliente/" class="dropdown-item">listado Cliente</a>
+                        
+                                </div>
+                            </div>
+
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Tecnico</a>
+                                <div class="dropdown-menu m-0">
                                     <a href="/nuevotecnico/" class="dropdown-item">Nuevo Tecnico</a>
                                     <a href="/listadotecnico/" class="dropdown-item">Listado Tecnico</a>                                    
+          
+                                </div>
+                            </div>
+
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Electrodomestico</a>
+                                <div class="dropdown-menu m-0">
                                     <a href="/nuevoelectrodomestico/" class="dropdown-item">Nuevo Electrodomestico</a>
                                     <a href="/listadoelectrodomestico/" class="dropdown-item">Listado Electrodomestico</a>
+                                   
+                                </div>
+                            </div>
+
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Servicio</a>
+                                <div class="dropdown-menu m-0">
                                     <a href="/nuevoservicio/" class="dropdown-item"> Nuevo Servicio</a>
                                     <a href="/listadoservicio/" class="dropdown-item">Listado Servicio</a>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Factura</a>
+                                <div class="dropdown-menu m-0">
                                     <a href="/nuevafactura/" class="dropdown-item">Nueva Factura</a>
                                     <a href="/listadofactura/" class="dropdown-item">Listado Factura</a>
                                 </div>
                             </div>
+
+
                             <a href="/contacto/" class="nav-item nav-link">Contacto</a>
                         </div>
-                        <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Get Started</a>
+                        <a href="{% url 'login' %}" class="btn btn-primary rounded-pill py-2 px-4">Cerrar Secion</a>
                     </div>
                 </nav>
             </div>
