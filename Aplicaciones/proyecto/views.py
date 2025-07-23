@@ -9,8 +9,6 @@ from django.contrib import messages
 from django.db.models.functions import ExtractYear
 import json
 
-
-
 # -------------- Login --------------------
 
 def login_view(request):
@@ -39,11 +37,6 @@ def menu_view(request):
 def cerrar_sesion(request):
     request.session.flush()
     return redirect('login')
-
-
-
-
-
 
 
 # ------------------------------- Graficos y estadísticas -------------------------------
@@ -181,8 +174,6 @@ def inicio(request):
         'grafico10_labels': json.dumps(grafico10_labels),
         'grafico10_data': json.dumps(grafico10_data),
     })
-
-
 
 
 
