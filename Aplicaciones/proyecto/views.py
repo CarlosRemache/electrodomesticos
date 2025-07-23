@@ -227,9 +227,7 @@ def procesareditarlogin(request):
     return redirect('/listadologin')
 
 
-
-
-#-------------------------------------------------------- Mostrar formulario para nuevo cliente
+#-------------------------- Crud de Cliente --------------------------------
 
 def nuevocliente(request):
     logins = Login.objects.all().order_by('nombre_login')
@@ -458,9 +456,6 @@ def procesareditarservicio(request):
     servicio.save()
     messages.success(request, "Servicio editado")
     return redirect('/listadoservicio')
-
-
-
 
 
 #------------------------------ Crud de Factura --------------------------------
