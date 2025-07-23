@@ -5,14 +5,10 @@ class usuario(models.Model):
     nombre_usuario = models.CharField(max_length=100, unique=True)
     contrasena_usuario = models.CharField(max_length=100)
 
-
-
 class Login(models.Model):
     id_login = models.AutoField(primary_key=True)
     nombre_login = models.CharField(max_length=100, unique=True)
     contrasena_login = models.CharField(max_length=100)
-
-
 
 class Cliente(models.Model):
     id_cliente = models.AutoField(primary_key=True)
@@ -23,7 +19,6 @@ class Cliente(models.Model):
     correo_cliente = models.EmailField()
     fecha_registro_cliente = models.DateTimeField(auto_now_add=True)
 
-
 class Tecnico(models.Model):
     id_tecnico = models.AutoField(primary_key=True)
     id_login = models.ForeignKey(Login, on_delete=models.CASCADE, related_name="tecnicos")
@@ -32,8 +27,6 @@ class Tecnico(models.Model):
     telefono_tecnico = models.CharField(max_length=20)
     correo_tecnico = models.EmailField()
     fecha_contratacion_tecnico = models.DateField()
-
-
 
 class Electrodomestico(models.Model):
     id_electrodomestico = models.AutoField(primary_key=True)
@@ -44,7 +37,6 @@ class Electrodomestico(models.Model):
     descripcion_falla_electrodomestico = models.TextField()
     fecha_ingreso_electrodomestico = models.DateField()
 
-
 class Servicio(models.Model):
     id_servicio = models.AutoField(primary_key=True)
     id_tecnico = models.ForeignKey(Tecnico, on_delete=models.CASCADE, related_name="servicios")
@@ -54,7 +46,6 @@ class Servicio(models.Model):
     estado_servicio = models.CharField(max_length=50, choices=[('Pendiente', 'Pendiente'), ('En Proceso', 'En Proceso'), ('Finalizado', 'Finalizado')])
     fecha_inicio_servicio = models.DateField()
     fecha_fin_servicio = models.DateField(null=True, blank=True)
-
 
 class Factura(models.Model):
     id_factura = models.AutoField(primary_key=True)
